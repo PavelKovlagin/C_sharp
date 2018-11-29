@@ -1,33 +1,8 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Автобусное предприятие</title>
-</head>
-<body>
     <div>
-        <h3>Список автобусов</h3>
-        <table>
-            <tr>
-                <td><p>Модель</p></td>
-                <td><p>Марка</p></td>
-                <td><p>Расход</p></td>
-            </tr>
-            @foreach (var b in ViewBag.Buses)
-            {
-            <tr>
-                <td><p>@b.marka</p></td>
-                <td><p>@b.model</p></td>
-                <td><p>@b.fuel</p></td>
-                <td><p><a href="/Home/Request/@b.id">Заказать</a></p></td>
-            </tr>
-            }
-        </table>
+        <td><p><a href="/Home/Buses">Автобусы</a></p></td>
+        <td><p><a href="/Home/ListRequest">Заказы</a></p></td>
     </div>
-</body>
-</html>

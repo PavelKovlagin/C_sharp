@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Автобусное предприятие</title>
+</head>
+<body>
+    <div>
+        <h3>Список заказов</h3>
+        <table>
+            <tr>
+                <td><p>Клиент</p></td>
+                <td><p>Адрес</p></td>
+                <td><p>Номер автобуса</p></td>
+                <td><p>Дата заказа</p></td>
+            </tr>
+            @foreach (var b in ViewBag.requests)
+            {
+            <tr>
+                <td><p>@b.client</p></td>
+                <td><p>@b.adress</p></td>
+                <td><p>@b.busID</p></td>
+                <td><p>@b.date</p></td>               
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

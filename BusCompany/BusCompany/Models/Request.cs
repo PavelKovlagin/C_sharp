@@ -7,9 +7,10 @@ namespace BusCompany.Models
 {
     public class Request
     {
-        public int requestId { get; set; } //id заявки
+        public int requestID { get; set; } //id заявки
         public string client { get; set; } // клиент
+        public string adress { get; set; } //адрес
         public int busID { get; set; } //id автобуса
-        public DateTime Date { get; set; } // дата заявки
+        public DateTime date { get; set; } // дата заявки
     }
 }
