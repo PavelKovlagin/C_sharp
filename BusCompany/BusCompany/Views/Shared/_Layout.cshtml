@@ -9,8 +9,9 @@
     <nav>
         <ul class="menu">
             <li> @Html.ActionLink("Главная", "Index", "Home")</li>
-            <li> @Html.ActionLink("Автобусы", "Buses", "Home")</li>
-            <li> @Html.ActionLink("Заявки", "ListRequest", "Home")</li>
+            <li> @Html.ActionLink("Водители", "DriversList", "Driver")</li>
+            <li> @Html.ActionLink("Автобусы", "BusesList", "Bus")</li>
+            <li> @Html.ActionLink("Заявки", "RequestsList", "Request")</li>
         </ul>
     </nav>
     @RenderBody()

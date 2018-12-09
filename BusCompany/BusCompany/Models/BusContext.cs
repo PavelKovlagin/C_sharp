@@ -9,16 +9,19 @@ namespace BusCompany.Models
     public class BusContext : DbContext
     {
         public DbSet<Bus> Buses { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
         public DbSet<Request> Requests { get; set; }
+        public DbSet<Waybill> Waybills { get; set; }
+        //public DbSet<Director> Directors { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Logist> Logists { get; set; }
     }
 
     public class BusDbInitializer : DropCreateDatabaseAlways<BusContext>
     {
         protected override void Seed(BusContext db)
         {
-            db.Buses.Add(new Bus { marka = "PAZ", model = "421", fuel = 22 });
-            db.Buses.Add(new Bus { marka = "UAZ", model = "333", fuel = 21 });
-            db.Buses.Add(new Bus { marka = "GAZ", model = "546", fuel = 23 });
+            db.Buses.Add(new Bus { marka = "PAZ", model = "421", cargo = 4500, passanger = 16, fuel = 22, odometer = 12454, status = true });
 
             base.Seed(db);
         }

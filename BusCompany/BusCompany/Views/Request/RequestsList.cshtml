@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model BusCompany.Models.Request
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Автобусное предприятие</title>
+</head>
+<body>
+    <div>
+        <h3>Список заказов</h3>
+        <table>
+            <tr>
+                <td><p>Клиент</p></td>
+                <td><p>Автобус</p></td>
+                <td><p>Дата оформления</p></td>
+                <td><p>Маршрут</p></td>
+                <td><p>Дата выезда</p></td>
+                <td><p>Дата возвращения</p></td>
+            </tr>
+            @foreach (var b in ViewBag.requests)
+            {
+            <tr>
+                <td><p>@b.idClient</p></td>
+                <td><p>@b.idBus</p></td>
+                <td><p>@b.date</p></td>
+                <td><p>@b.path</p></td>
+                <td><p>@b.departureDate</p></td>
+                <td><p>@b.returnDate</p></td>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

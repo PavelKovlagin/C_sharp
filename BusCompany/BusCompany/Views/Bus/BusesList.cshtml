@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Автобусное предприятие</title>
+</head>
+<body>
+    <div>
+        <h3>Список автобусов</h3>
+        <td><p><a href="/Bus/BusAdd">Добавить автобус</a></p></td>
+        <table>
+            <tr>
+                <td><p>Марка</p></td>
+                <td><p>Модель</p></td>
+                <td><p>Грузоподъемность</p></td>
+                <td><p>Пассажировместимость</p></td>
+                <td><p>Расход</p></td>
+                <td><p>Одометр</p></td>
+                <td><p>Статус</p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+                <td><p></p></td>
+            </tr>
+            @foreach (var b in ViewBag.Buses)
+            {
+                <tr>
+                    <td><p>@b.marka</p></td>
+                    <td><p>@b.model</p></td>
+                    <td><p>@b.cargo</p></td>
+                    <td><p>@b.passanger</p></td>
+                    <td><p>@b.fuel</p></td>
+                    <td><p>@b.odometer</p></td>
+                    <td><p>@b.status</p></td>
+                    <td><p><a href="/Request/RequestAdd/@b.id">Заказать</a></p></td>
+                    <td><p><a href="/Bus/BusEdit/@b.id">Редактировать</a></p></td>
+                    <td><p><a href="/Bus/BusDelete/@b.id">Удалить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model BusCompany.Models.Bus
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Новый автобус</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.marka, "Марка")
+    <br />
+    @Html.EditorFor(m => m.marka)
+    <br /><br />
+    @Html.LabelFor(m => m.model, "Модель")
+    <br />
+    @Html.EditorFor(m => m.model)
+    <br /><br />
+    @Html.LabelFor(m => m.cargo, "Грузоподъемность, кг")
+    <br />
+    @Html.EditorFor(m => m.cargo)
+    <br /><br />
+    @Html.LabelFor(m => m.passanger, "Пассажировместимость, чел")
+    <br />
+    @Html.EditorFor(m => m.passanger)
+    <br /><br />
+    @Html.LabelFor(m => m.fuel, "Расход, л/100км")
+    <br />
+    @Html.EditorFor(m => m.fuel)
+    <br /><br />
+    @Html.LabelFor(m => m.odometer, "Пробег, км")
+    <br />
+    @Html.EditorFor(m => m.odometer)
+    <br /><br />
+    @Html.LabelFor(m => m.status, "Статус")
+    <br />
+    @Html.EditorFor(m => m.status)
+    <br /><br />
+    <input type="submit" value="Добавить"/>
+}
+

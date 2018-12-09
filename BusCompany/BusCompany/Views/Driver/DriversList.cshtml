@@ -1,0 +1,32 @@
+﻿@model IEnumerable<BusCompany.Models.Driver>
+@{
+    ViewBag.Title = "Список водителей";
+}
+
+<h2>Список водителей</h2>
+<p>
+    @Html.ActionLink("Добивить водителя", "Create")
+</p>
+<table>
+    <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Автобус</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.name)</td>
+            <td>@Html.DisplayFor(modelItem => item.patronymic)</td>
+            <td>@Html.DisplayFor(modelItem => item.bus.marka + " " + item.bus.model)</td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.id})
+                @Html.ActionLink("Удалить", "Delete", new { id = item.id})
+            </td>     
+        </tr>
+    }
+</table>
+

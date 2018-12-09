@@ -156,13 +156,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BusController\BusController.cs" />
+    <Compile Include="Controllers\DriverController\DriverController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequestController\RequestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Bus.cs" />
     <Compile Include="Models\BusContext.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Director.cs" />
+    <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\Logist.cs" />
     <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\Waybill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,9 +212,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Request.cshtml" />
-    <Content Include="Views\Home\Buses.cshtml" />
-    <Content Include="Views\Home\ListRequest.cshtml" />
+    <Content Include="Views\Request\RequestAdd.cshtml" />
+    <Content Include="Views\Bus\BusesList.cshtml" />
+    <Content Include="Views\Request\RequestsList.cshtml" />
+    <Content Include="Views\Bus\BusEdit.cshtml" />
+    <Content Include="Views\Driver\DriversList.cshtml" />
+    <Content Include="Views\Bus\BusAdd.cshtml" />
+    <Content Include="Views\Bus\BusDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Оформление заявки";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model BusCompany.Models.Request 
+<h2>Автобус №@ViewBag.busID<h2>
+@using (Html.BeginForm("Request", "Home", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.id)
+        <p>
+            @Html.LabelFor(m => m.idClient, "Клиент")
+            <br />
+            @Html.EditorFor(m => m.idClient)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.path, "Маршрут")
+            <br />
+            @Html.EditorFor(m => m.path)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.departureDate, "Дата выезда")
+            <br />
+            @Html.EditorFor(m => m.departureDate)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.returnDate, "Дата возвращения")
+            <br />
+            @Html.EditorFor(m => m.returnDate)
+        </p>
+        <p><input type="submit" value="Отправсить" /></p>
+
+    </fieldset>
+}
+
+
+
