@@ -9,12 +9,9 @@ namespace BusCompany.Models
     public class BusContext : DbContext
     {
         public DbSet<Bus> Buses { get; set; }
-        public DbSet<Driver> Drivers { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Waybill> Waybills { get; set; }
         //public DbSet<Director> Directors { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Logist> Logists { get; set; }
     }
 
     public class BusDbInitializer : DropCreateDatabaseAlways<BusContext>

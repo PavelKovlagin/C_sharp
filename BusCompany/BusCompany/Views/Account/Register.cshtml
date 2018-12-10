@@ -1,0 +1,52 @@
+﻿@model BusCompany.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Регистрация</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <h4>Регистрация пользователя</h4>
+        <hr/>
+        @Html.ValidationSummary(false)
+
+        <div>
+            Электронный адрес
+            <div>
+                @Html.EditorFor(m => m.Email)
+            </div>
+            Фамилия
+            <div>
+                @Html.EditorFor(m => m.surname)
+            </div>
+            Имя
+            <div>
+                @Html.EditorFor(m => m.name)
+            </div>
+            Отчество
+            <div>
+                @Html.EditorFor(m => m.patronymic)
+            </div>
+            Пароль
+            <div>
+                @Html.EditorFor(m => m.Password)
+            </div>
+            Подтвердите пароль
+            <div>
+                @Html.EditorFor(m => m.PasswordConfirm)
+            </div>
+
+            <div>
+                <div>
+                    <input type="submit" value="Зарегистрироваться" />
+                </div>
+            </div>
+        </div>
+     </div>
+}
+

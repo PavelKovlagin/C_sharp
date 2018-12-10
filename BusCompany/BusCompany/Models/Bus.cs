@@ -15,11 +15,5 @@ namespace BusCompany.Models
         public int fuel { get; set; } // расход
         public int odometer { get; set; } //пробег
         public bool status { get; set; } //техническое состояние
-
-        public ICollection<Driver> drivers { get; set; }
-        public Bus()
-        {
-            drivers = new List<Driver>();
-        }
     }
 }

@@ -35,5 +35,29 @@ namespace BusCompany.Controllers.RequestController
             db.SaveChanges();
             return RedirectToAction("Buses");
         }
+
+        [HttpGet]
+        public ActionResult RequestDelete(int id)
+        {
+            Request request = db.Requests.Find(id);
+            if (request == null)
+            {
+                return HttpNotFound();
+            }
+            return View(request);
+        }
+
+        [HttpPost, ActionName("RequestDelete")]
+        public ActionResult RequestDeleteConfirmed(int id)
+        {
+            Request request = db.Requests.Find(id);
+            if (request == null)
+            {
+                return HttpNotFound();
+            }
+            db.Requests.Remove(request);
+            db.SaveChanges();
+            return RedirectToAction("RequestsList");
+        }
     }
 }

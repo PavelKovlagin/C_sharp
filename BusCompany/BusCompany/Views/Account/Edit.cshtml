@@ -1,0 +1,22 @@
+﻿@model BusCompany.Models.EditModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Профиль</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ValidationSummary(true, "")
+        <div>
+            <p>Фамилия: @Html.DisplayFor(m => m.surname)</p>
+            <p>Имя: @Html.DisplayFor(m => m.name)</p>
+            <p>Отчетсво: @Html.DisplayFor(m => m.patronymic)</p>
+            <p>Email: @Html.DisplayFor(m => m.email)</p>
+        </div>
+    </div>
+}

@@ -14,7 +14,7 @@ namespace BusCompany
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer(new BusDbInitializer()); //создание базы данных из кода
+            Database.SetInitializer(new BusDbInitializer()); //создание базы данных из кода
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
