@@ -12,8 +12,10 @@ namespace BusCompany.Models
         public string name { get; set; } //имя
         public string patronymic { get; set; } //отчество
 
+        public ICollection<Request> requests { get; set; }
         public ApplicationUser()
-        {           
+        {
+            requests = new List<Request>();
         }
     }
 }

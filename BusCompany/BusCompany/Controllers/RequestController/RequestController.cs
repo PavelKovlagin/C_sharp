@@ -5,35 +5,60 @@ using System.Web;
 using System.Web.Mvc;
 using BusCompany.Models;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace BusCompany.Controllers.RequestController
 {
     public class RequestController : Controller
     {
-
         BusContext db = new BusContext(); //создаем контекст данных
+
+        private ApplicationUserManager UserManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+        }
 
         public ActionResult RequestsList()
         {
-            IEnumerable<Request> requests = db.Requests; //получаем из БД все объекты Request
-            ViewBag.Requests = requests; //передаем все объекты в динамическое свойство requests в ViewBag
-            return View(); //возвращаем представление
+            var requests = db.Requests.Include(p => p.bus);
+            return View(requests.ToList());
         }
 
         [HttpGet]
-        public ActionResult RequestAdd(int id)
+        public ActionResult RequestAdd(int ID)
         {
-            ViewBag.BusId = id;
-            return View();
+            ApplicationUser user = UserManager.FindByEmail(User.Identity.Name);
+            if (user != null)
+            {
+                Bus busID = db.Buses.Find(ID);
+                Request req = new Request();         
+                ViewBag.Buses = busID;
+                ViewBag.User = user;
+                return View();
+            };
+            return RedirectToAction("Login", "Account");
         }
 
         [HttpPost]
-        public ActionResult RequestAdd(Request request)
+        public ActionResult RequestAdd(Request model)
         {
-            request.date = DateTime.Now; //добавление информации о заявке в базу данных
-            db.Requests.Add(request);
+            Request reqest = new Request
+            {
+                clientEmail = model.clientEmail,
+                date = DateTime.Now,
+                path = model.path,
+                departureDate = model.departureDate,
+                returnDate = model.returnDate,
+                busID = model.busID,
+            };
+            db.Requests.Add(reqest);
             db.SaveChanges();
-            return RedirectToAction("Buses");
+
+            return RedirectToAction("BusesList", "Bus");
         }
 
         [HttpGet]
@@ -44,6 +69,8 @@ namespace BusCompany.Controllers.RequestController
             {
                 return HttpNotFound();
             }
+            Bus bus = db.Buses.Find(request.busID);
+            ViewBag.Bus = bus;
             return View(request);
         }
 

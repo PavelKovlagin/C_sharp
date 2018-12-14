@@ -1,8 +1,8 @@
-﻿@{
+﻿@model IEnumerable<BusCompany.Models.Request>
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model BusCompany.Models.Request
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -14,21 +14,25 @@
         <table>
             <tr>
                 <td><p>Клиент</p></td>
-                <td><p>Автобус</p></td>
-                <td><p>Дата оформления</p></td>
-                <td><p>Маршрут</p></td>
+                <td><p>Марка</p></td>
+                <td><p>Модель</p></td>
                 <td><p>Дата выезда</p></td>
                 <td><p>Дата возвращения</p></td>
+                <td><p>Маршрут</p></td>
+                <td><p></p></td>
+                <td><p></p></td>
             </tr>
-            @foreach (var b in ViewBag.requests)
+            @foreach (var m in Model)
             {
             <tr>
-                <td><p>@b.idClient</p></td>
-                <td><p>@b.idBus</p></td>
-                <td><p>@b.date</p></td>
-                <td><p>@b.path</p></td>
-                <td><p>@b.departureDate</p></td>
-                <td><p>@b.returnDate</p></td>
+                <td><p>@Html.DisplayFor(model => m.clientEmail)</p></td>
+                <td><p>@Html.DisplayFor(model => m.bus.marka)</p></td>
+                <td><p>@Html.DisplayFor(model => m.bus.model)</p></td>
+                <td><p>@Html.DisplayFor(model => m.departureDate)</p></td>
+                <td><p>@Html.DisplayFor(model => m.returnDate)</p></td>
+                <td><p>@Html.DisplayFor(model => m.path)</p></td>
+                <td><p><a href="/Request/RequestDelete/@m.id">Удалить</a></p></td>
+                <td><p><a href="/Waybill/WaybillAdd/@m.id">Оформить путевой лист</a></p></td>
             </tr>
             }
         </table>

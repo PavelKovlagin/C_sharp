@@ -1,38 +1,22 @@
-﻿@{
-    ViewBag.Title = "Оформление заявки";
+﻿@model BusCompany.Models.Request
+
+@{
+    ViewBag.Title = "Оформление заявки на автобус";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@model BusCompany.Models.Request 
-<h2>Автобус №@ViewBag.busID<h2>
-@using (Html.BeginForm("Request", "Home", FormMethod.Post))
+<h2>Удаление автобуса</h2>
+@using (Html.BeginForm("RequestAdd", "Request", FormMethod.Post))
 {
-    <fieldset>
-        @Html.HiddenFor(m => m.id)
-        <p>
-            @Html.LabelFor(m => m.idClient, "Клиент")
-            <br />
-            @Html.EditorFor(m => m.idClient)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.path, "Маршрут")
-            <br />
-            @Html.EditorFor(m => m.path)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.departureDate, "Дата выезда")
-            <br />
-            @Html.EditorFor(m => m.departureDate)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.returnDate, "Дата возвращения")
-            <br />
-            @Html.EditorFor(m => m.returnDate)
-        </p>
-        <p><input type="submit" value="Отправсить" /></p>
+<dl>
+    <input type="hidden" value="@ViewBag.Buses.id" name="busID" />
+    <input type="hidden" value="@ViewBag.User.Email" name="clientEmail"/>
+    <dt>Клиент: @ViewBag.User.surname @ViewBag.User.name @ViewBag.User.patronymic</dt>
+    <dt>Автобус: @ViewBag.Buses.marka @ViewBag.Buses.model</dt>
+    <dt>Маршрут: @Html.EditorFor(model => model.path)</dt>
+    <dt>Дата выезда: <input type="date" name="departureDate" /></dt>
+    <dt>Дата возвращения: <input type="date" name="returnDate" /></dt>
+</dl>
 
-    </fieldset>
+    <input type="submit" value="Отправить" />
 }
-
-
-

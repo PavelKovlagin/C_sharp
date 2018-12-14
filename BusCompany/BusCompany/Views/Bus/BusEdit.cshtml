@@ -5,7 +5,7 @@
 
 @model BusCompany.Models.Bus
 <h2>Автобус №@Model.id</h2>
-@using (Html.BeginForm("EditBus", "Home", FormMethod.Post))
+@using (Html.BeginForm("BusEdit", "Bus", FormMethod.Post))
 {
 <fieldset>
     @Html.HiddenFor(m => m.id)

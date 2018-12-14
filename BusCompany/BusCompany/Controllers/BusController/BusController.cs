@@ -16,9 +16,8 @@ namespace BusCompany.Controllers.BusController
         [HttpGet]
         public ActionResult BusesList()
         {
-            IEnumerable<Bus> buses = db.Buses; //получаем из БД все объекты Bus
-            ViewBag.Buses = buses; //передаем все объекты в динамическое свойство buses в ViewBag
-            return View(); //возвращаем представление
+            var buses = db.Buses;
+            return View(buses.ToList());
         }
 
         [HttpGet]
@@ -55,7 +54,7 @@ namespace BusCompany.Controllers.BusController
         {
             db.Entry(bus).State = EntityState.Modified;
             db.SaveChanges();
-            return RedirectToAction("Buses");
+            return RedirectToAction("BusesList");
         }
 
         [HttpGet]

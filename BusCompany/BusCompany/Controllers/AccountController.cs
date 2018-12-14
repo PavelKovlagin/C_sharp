@@ -101,7 +101,7 @@ namespace BusCompany.Controllers
         public ActionResult Logout()
         {
             AuthorizationManager.SignOut();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]

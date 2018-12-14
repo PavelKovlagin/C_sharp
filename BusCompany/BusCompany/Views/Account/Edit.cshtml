@@ -6,8 +6,6 @@
 
 <h2>Профиль</h2>
 
-@using (Html.BeginForm())
-{
     @Html.AntiForgeryToken()
 
     <div>
@@ -17,6 +15,10 @@
             <p>Имя: @Html.DisplayFor(m => m.name)</p>
             <p>Отчетсво: @Html.DisplayFor(m => m.patronymic)</p>
             <p>Email: @Html.DisplayFor(m => m.email)</p>
+            @using (Html.BeginForm("Logout", "Account", FormMethod.Post))
+            {<input type="submit" value="Выход" />}
+            <form action="/Account/Delete" method="get">
+                <input type="submit" value="Удалить" />
+            </form>
         </div>
     </div>
-}

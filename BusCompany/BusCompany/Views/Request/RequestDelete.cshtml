@@ -5,13 +5,11 @@
 
 <h2>Удаление автобуса</h2>
 <dl>
-    <dt>Марка: @Html.DisplayFor(m => m.marka)</dt>
-    <dt>Модель: @Html.DisplayFor(m => m.model)</dt>
-    <dt>Грузоподъемность, кг: @Html.DisplayFor(m => m.cargo)</dt>
-    <dt>Пассажировместимост, чел: @Html.DisplayFor(m => m.passanger)</dt>
-    <dt>Расход, л/100км: @Html.DisplayFor(m => m.fuel)</dt>
-    <dt>Пробег, км: @Html.DisplayFor(m => m.odometer)</dt>
-    <dt>Стуатус: @Html.DisplayFor(m => m.status)</dt>
+    <dt>Марка: @ViewBag.Bus.marka </dt>
+    <dt>Модель: @Html.DisplayFor(m => m.bus.model)</dt>
+    <dt>Грузоподъемность, кг: @Html.DisplayFor(m => m.departureDate)</dt>
+    <dt>Пассажировместимост, чел: @Html.DisplayFor(m => m.returnDate)</dt>
+    <dt>Расход, л/100км: @Html.DisplayFor(m => m.path)</dt>
 </dl>
 @using (Html.BeginForm())
 {
