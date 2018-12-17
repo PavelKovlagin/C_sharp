@@ -1,0 +1,6 @@
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\bin\Debug\dayNumber.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\bin\Debug\dayNumber.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\obj\Debug\dayNumber.csprojAssemblyReference.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\obj\Debug\dayNumber.csproj.CoreCompileInputs.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\obj\Debug\dayNumber.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\obj\Debug\dayNumber.pdb

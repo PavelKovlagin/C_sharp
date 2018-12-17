@@ -1,0 +1,10 @@
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\obj\Debug\someProgram.csprojAssemblyReference.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\obj\Debug\someProgram.csproj.CoreCompileInputs.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\bin\Debug\someProgram.exe.config
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\bin\Debug\someProgram.exe
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\bin\Debug\someProgram.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\obj\Debug\someProgram.exe
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\obj\Debug\someProgram.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\bin\Debug\someLig.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\obj\Debug\someProgram.csproj.CopyComplete
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someProgram\bin\Debug\someLig.dll
