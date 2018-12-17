@@ -1,0 +1,17 @@
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\myTest.deps.json
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\myTest.runtimeconfig.json
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\myTest.runtimeconfig.dev.json
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\myTest.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\myTest.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\obj\Debug\netcoreapp2.1\myTest.csprojAssemblyReference.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\obj\Debug\netcoreapp2.1\myTest.csproj.CoreCompileInputs.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\obj\Debug\netcoreapp2.1\myTest.AssemblyInfoInputs.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\obj\Debug\netcoreapp2.1\myTest.AssemblyInfo.cs
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\obj\Debug\netcoreapp2.1\myTest.csproj.CopyComplete
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\obj\Debug\netcoreapp2.1\myTest.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\obj\Debug\netcoreapp2.1\myTest.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\someLig.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\myTest\bin\Debug\netcoreapp2.1\someLig.pdb

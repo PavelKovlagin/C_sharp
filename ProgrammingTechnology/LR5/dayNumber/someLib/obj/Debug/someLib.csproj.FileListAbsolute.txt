@@ -1,0 +1,10 @@
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\obj\Debug\someLib.csproj.CoreCompileInputs.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\bin\Debug\someLig.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\bin\Debug\someLig.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\obj\Debug\someLig.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\dayNumber\obj\Debug\someLig.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someLib\bin\Debug\someLig.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someLib\bin\Debug\someLig.pdb
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someLib\obj\Debug\someLib.csproj.CoreCompileInputs.cache
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someLib\obj\Debug\someLig.dll
+G:\Документы\Google Диск\ВлГУ\Технологии программирования\5 семестр\Лабораторная работа №5\dayNumber\someLib\obj\Debug\someLig.pdb
