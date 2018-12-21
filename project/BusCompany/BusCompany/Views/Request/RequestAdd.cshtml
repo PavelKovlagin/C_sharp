@@ -5,12 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Удаление автобуса</h2>
+<h2>Оформление заявки</h2>
 @using (Html.BeginForm("RequestAdd", "Request", FormMethod.Post))
 {
 <dl>
     <input type="hidden" value="@ViewBag.Buses.id" name="busID" />
-    <input type="hidden" value="@ViewBag.User.Email" name="clientEmail"/>
+    <input type="hidden" value="@ViewBag.User.Email" name="client"/>
+    <input type="hidden" value="false" name="status"/>
     <dt>Клиент: @ViewBag.User.surname @ViewBag.User.name @ViewBag.User.patronymic</dt>
     <dt>Автобус: @ViewBag.Buses.marka @ViewBag.Buses.model</dt>
     <dt>Маршрут: @Html.EditorFor(model => model.path)</dt>

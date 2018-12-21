@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "UsersList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<BusCompany.Models.ApplicationUser>
+
+<h2>Список пользователей</h2>
+<table>
+    <tr>
+        <td><p>Фамилия</p></td>
+        <td><p>Имя</p></td>
+        <td><p>Отчество</p></td>
+        <td><p>Email</p></td>
+        <td><p>Роль</p></td>
+    </tr>
+    @foreach (var val in Model)
+    {
+    <tr>
+        <td><p>@val.surname.ToString()</p></td>
+        <td><p>@val.name.ToString()</p></td>
+        <td><p>@val.patronymic.ToString()</p></td>
+        <td><p>@val.Email.ToString()</p></td>
+        <td><p>@val.role.ToString()</td>
+        @if (User.IsInRole("director"))
+        {
+            <td><p><a href="/Account/UserDelete/@val.Id">Удалить</a></p></td>
+        }
+    </tr>
+    }
+</table>
+

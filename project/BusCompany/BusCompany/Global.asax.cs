@@ -14,6 +14,7 @@ namespace BusCompany
     {
         protected void Application_Start()
         {
+            //Database.SetInitializer<ApplicationContext>(new AppDbInitializer());
             //Database.SetInitializer(new BusDbInitializer()); //создание базы данных из кода
 
             AreaRegistration.RegisterAllAreas();

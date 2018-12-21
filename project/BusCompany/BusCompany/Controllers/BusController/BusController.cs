@@ -20,6 +20,7 @@ namespace BusCompany.Controllers.BusController
             return View(buses.ToList());
         }
 
+        [Authorize(Roles = "director")]
         [HttpGet]
         public ActionResult BusAdd()
         {
@@ -34,6 +35,7 @@ namespace BusCompany.Controllers.BusController
             return RedirectToAction("BusesList");
         }
 
+        [Authorize(Roles = "director, logist")]
         [HttpGet]
         public ActionResult BusEdit(int? id)
         {
@@ -57,6 +59,7 @@ namespace BusCompany.Controllers.BusController
             return RedirectToAction("BusesList");
         }
 
+        [Authorize(Roles = "director")]
         [HttpGet]
         public ActionResult BusDelete(int id)
         {

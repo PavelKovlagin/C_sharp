@@ -15,6 +15,7 @@
             <p>Имя: @Html.DisplayFor(m => m.name)</p>
             <p>Отчетсво: @Html.DisplayFor(m => m.patronymic)</p>
             <p>Email: @Html.DisplayFor(m => m.email)</p>
+            <p>Роль: @Html.DisplayFor(m => m.role)</p>
             @using (Html.BeginForm("Logout", "Account", FormMethod.Post))
             {<input type="submit" value="Выход" />}
             <form action="/Account/Delete" method="get">

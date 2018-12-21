@@ -17,6 +17,10 @@
         <table>
             <tr>
                 <td><p>Дата оформления</p></td>
+                <td><p>Марка</p></td>
+                <td><p>Модель</p></td>
+                <td><p>Клиент</p></td>
+                <td><p>Логист</p></td>
                 <td><p>Маршрут</p></td>
                 <td><p>Дата выезда</p></td>
                 <td><p>Дата возвращения</p></td>
@@ -25,6 +29,10 @@
             {
             <tr>
                 <td><p>@Html.DisplayFor(model => m.date)</p></td>
+                <td><p>@Html.DisplayFor(model => m.bus.marka)</p></td>
+                <td><p>@Html.DisplayFor(model => m.bus.model)</p></td>
+                <td><p>@Html.DisplayFor(model => m.client)</p></td>
+                <td><p>@Html.DisplayFor(model => m.logist)</p></td>
                 <td><p>@Html.DisplayFor(model => m.path)</p></td>
                 <td><p>@Html.DisplayFor(model => m.departureDate)</p></td>
                 <td><p>@Html.DisplayFor(model => m.returnDate)</p></td>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,12 +21,14 @@ namespace BusCompany.Controllers.RequestController
             }
         }
 
+        [Authorize(Roles = "director, logist")]
         public ActionResult RequestsList()
         {
             var requests = db.Requests.Include(p => p.bus);
             return View(requests.ToList());
         }
 
+        [Authorize(Roles = "client")]
         [HttpGet]
         public ActionResult RequestAdd(int ID)
         {
@@ -48,12 +49,12 @@ namespace BusCompany.Controllers.RequestController
         {
             Request reqest = new Request
             {
-                clientEmail = model.clientEmail,
+                client = model.client,
+                busID = model.busID,
                 date = DateTime.Now,
                 path = model.path,
                 departureDate = model.departureDate,
                 returnDate = model.returnDate,
-                busID = model.busID,
             };
             db.Requests.Add(reqest);
             db.SaveChanges();
@@ -61,6 +62,7 @@ namespace BusCompany.Controllers.RequestController
             return RedirectToAction("BusesList", "Bus");
         }
 
+        [Authorize (Roles ="director, logist")]
         [HttpGet]
         public ActionResult RequestDelete(int id)
         {

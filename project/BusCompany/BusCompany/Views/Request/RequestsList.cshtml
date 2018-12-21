@@ -10,7 +10,7 @@
 </head>
 <body>
     <div>
-        <h3>Список заказов</h3>
+        <h3>Список заявок</h3>
         <table>
             <tr>
                 <td><p>Клиент</p></td>
@@ -25,14 +25,17 @@
             @foreach (var m in Model)
             {
             <tr>
-                <td><p>@Html.DisplayFor(model => m.clientEmail)</p></td>
+                <td><p>@Html.DisplayFor(model => m.client)</p></td>
                 <td><p>@Html.DisplayFor(model => m.bus.marka)</p></td>
                 <td><p>@Html.DisplayFor(model => m.bus.model)</p></td>
                 <td><p>@Html.DisplayFor(model => m.departureDate)</p></td>
                 <td><p>@Html.DisplayFor(model => m.returnDate)</p></td>
                 <td><p>@Html.DisplayFor(model => m.path)</p></td>
+                @if (User.IsInRole("logist") || User.IsInRole("director"))
+                {
                 <td><p><a href="/Request/RequestDelete/@m.id">Удалить</a></p></td>
                 <td><p><a href="/Waybill/WaybillAdd/@m.id">Оформить путевой лист</a></p></td>
+                }
             </tr>
             }
         </table>

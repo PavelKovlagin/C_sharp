@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -22,25 +21,135 @@ namespace BusCompany.Controllers
             }
         }
 
+        [Authorize (Roles = "director")]
+        public ActionResult UsersList()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return View(db.Users.ToList());
+            }
+        }
+
+        [Authorize(Roles = "director")]
+        [HttpGet]
+        public ActionResult DriverAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DriverAdd(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    surname = model.surname,
+                    name = model.name,
+                    patronymic = model.patronymic,
+                    UserName = model.Email,
+                    Email = model.Email,
+                    role = "Водитель"
+                };
+
+                var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await UserManager.AddToRoleAsync(user.Id, "driver");
+                    return RedirectToAction("UsersList", "Account");
+                }
+                else
+                {
+                    foreach (string error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error);
+                    }
+                }
+            }
+            return RedirectToAction("UsersList", "Account");
+        }
+
+        [Authorize(Roles = "director")]
+        [HttpGet]
+        public ActionResult LogistAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> LogistAdd(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser
+                {
+                    surname = model.surname,
+                    name = model.name,
+                    patronymic = model.patronymic,
+                    UserName = model.Email,
+                    Email = model.Email,
+                    role = "Логист"
+                    
+                };
+
+                var result = await UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await UserManager.AddToRoleAsync(user.Id, "logist");
+                    return RedirectToAction("UsersList", "Account");
+                }
+                else
+                {
+                    foreach (string error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error);
+                    }
+                }
+            }
+            return RedirectToAction("UsersList", "Account");
+        }
+
+        [HttpGet]
+        public ActionResult WorkWithAccount()
+        {
+            ApplicationUser user = UserManager.FindByEmail(User.Identity.Name);
+            ViewBag.user = user;
+            return View();
+        }
+
         public ActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterModel model)
         {
             if (ModelState.IsValid)
             {
-                ApplicationUser user = new ApplicationUser {
+                var user = new ApplicationUser
+                {
                     surname = model.surname,
                     name = model.name,
                     patronymic = model.patronymic,
                     UserName = model.Email,
-                    Email = model.Email };
-                IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+                    Email = model.Email,
+                    role = "Клиент"
+                };
+
+                var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
+                    await UserManager.AddToRoleAsync(user.Id, "client");
                     return RedirectToAction("Login", "Account");
                 }
                 else
@@ -90,7 +199,7 @@ namespace BusCompany.Controllers
                         IsPersistent = true
                     }, claim);
                     if (String.IsNullOrEmpty(returnUrl))
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("WorkWithAccount", "Account");
                     return Redirect(returnUrl);
                 }
             }
@@ -101,7 +210,7 @@ namespace BusCompany.Controllers
         public ActionResult Logout()
         {
             AuthorizationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("WorkWithAccount", "Account");
         }
 
         [HttpGet]
@@ -123,7 +232,7 @@ namespace BusCompany.Controllers
                     return RedirectToAction("Logout", "Account");
                 }
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("WorkWithAccount", "Account");
         }
 
         public ActionResult Edit()
@@ -135,11 +244,37 @@ namespace BusCompany.Controllers
                     surname = user.surname,
                     name = user.name,
                     patronymic = user.patronymic,
-                    email = user.Email
+                    email = user.Email,
+                    role = user.role,
                 };
                 return View(model);
             }
             return RedirectToAction("Login", "Account");
+        }
+
+        [Authorize(Roles = "director")]
+        [HttpGet]
+        public ActionResult UserDelete(string id)
+        {
+            ApplicationUser user = UserManager.FindById(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.User = user;
+            return View();
+        }
+
+        [HttpPost, ActionName("UserDelete")]
+        public ActionResult UserDeleteConfirmed(string id)
+        {
+            ApplicationUser user = UserManager.FindById(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            IdentityResult result = UserManager.Delete(user);
+            return RedirectToAction("UsersList", "Account");
         }
     }
 }

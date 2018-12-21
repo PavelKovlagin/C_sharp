@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "WorkWithAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if ( ViewBag.user == null)
+{
+<h2>Здравствуйте, Гость</h2>
+}
+else
+{
+    <h2>Здравствуйте, @ViewBag.user.Email</h2>
+}
+
+<li> @Html.ActionLink("Авторизоваться", "Login", "Account")</li>
+<li> @Html.ActionLink("Регистрация", "Register", "Account")</li>
+<li> @Html.ActionLink("Профиль", "Edit", "Account")</li>
+

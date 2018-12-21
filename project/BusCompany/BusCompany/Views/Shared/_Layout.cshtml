@@ -9,12 +9,26 @@
     <nav>
         <ul class="menu">
             <li> @Html.ActionLink("Главная", "Index", "Home")</li>
-            <li> @Html.ActionLink("Авторизоваться", "Login", "Account")</li>
-            <li> @Html.ActionLink("Регистрация", "Register", "Account")</li>
-            <li> @Html.ActionLink("Профиль", "Edit", "Account")</li>
+            @if (User.IsInRole("director"))
+            {
+                <li> @Html.ActionLink("Список пользователей", "UsersList", "Account")</li>
+            }
+            <li> @Html.ActionLink("Учетная запись", "WorkWithAccount", "Account")</li>
             <li> @Html.ActionLink("Автобусы", "BusesList", "Bus")</li>
-            <li> @Html.ActionLink("Заявки", "RequestsList", "Request")</li>
-            <li> @Html.ActionLink("Путевые листы", "WaybillsList", "Waybill")</li>
+            @if (User.IsInRole("driver"))
+            {
+                <li> @Html.ActionLink("Путевые листы", "WaybillsList", "Waybill")</li>
+            }
+            @if (User.IsInRole("logist") || User.IsInRole("director"))
+            {
+                <li> @Html.ActionLink("Заявки", "RequestsList", "Request")</li>
+
+            }
+            @if (User.IsInRole("director"))
+            {
+                <li> @Html.ActionLink("Регистрация водителя", "DriverAdd", "Account")</li>
+                <li> @Html.ActionLink("Регистрация логиста", "LogistAdd", "Account")</li>
+            }
         </ul>
     </nav>
     @RenderBody()
